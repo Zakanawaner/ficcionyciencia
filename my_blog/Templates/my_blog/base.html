@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ciencia y ficción">
+    <meta name="author" content="Mario Fernández">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'my_blog/css/bootstrap.min.css' %}" rel="stylesheet" type='text/css'>
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'fonts/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'my_blog/css/clean-blog.min.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static 'my_blog/css/main.css' %}" type='text/css'>
+
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand weak-white" href="{% url 'blog-home' %}">Inicio</a>
+            <a class="navbar-brand weak-white" href="{% url 'blog-about' %}">Sobre Nosotros</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-item nav-link weak-white" href="{% url 'post-create' %}">Nueva entrada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link weak-white" href="{% url 'profile' %}">Tu perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link weak-white" href="{% url 'logout' %}">Desconéctate</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-item nav-link weak-white" href="{% url 'login' %}">Accede</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link weak-white" href="{% url 'register' %}">Registro</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <div class="site-heading">
+                        <h2 class="weak-white">Ficción y Ciencia</h2>
+                        <h4 class="weak-white">Donde se encuentran la ciencia y la ficción</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container position-sticky centrado" id="nav-2">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="btn-c btn-c-outline-info" href="#">Ficción</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-c btn-c-outline-info" href="#">Ciencia</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="mx-auto">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-goodreads fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Síguenos en las redes</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+     <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/clean-blog.min.js' %}"></script>
+</body>
+</html>
