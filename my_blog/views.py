@@ -31,6 +31,16 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
+class SciencePostListView(ListView):
+    model = Post
+    template_name = 'my_blog/post_science.html'
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Post.objects.filter(label='ciencia').order_by('-date_posted')
+
+
 class PostDetailView(DetailView):
     model = Post
 
