@@ -41,6 +41,16 @@ class SciencePostListView(ListView):
         return Post.objects.filter(label='ciencia').order_by('-date_posted')
 
 
+class FictionPostListView(ListView):
+    model = Post
+    template_name = 'my_blog/post_fiction.html'
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Post.objects.filter(label='ficción').order_by('-date_posted')
+
+
 class PostDetailView(DetailView):
     model = Post
 

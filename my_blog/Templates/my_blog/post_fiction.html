@@ -1,23 +1,6 @@
 {% extends "my_blog/base.html" %}
 {% block content %}
-    {% comment %}
-    <div class="row portfolios-area">
-        <div class="col-lg-6 col-md-6 web">
-            <a href="#" class="portfolio-item set-bg image-lit">
-                <div class="pi-inner">
-                    <h2>Ficción</h2>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-6 digital">
-            <a href="#" class="portfolio-item set-bg image-sci">
-                <div class="pi-inner">
-                    <h2>Ciencia</h2>
-                </div>
-            </a>
-        </div>
-    </div>
-    {% endcomment %}
+    <h1 class="mb-4 centrado">Entradas de Ficción ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
         <article class="media content-section">
             <img class="article-img" src="{{ post.author.profile.image.url }}">
@@ -28,11 +11,7 @@
                     <a class="link-c" href="{% url 'user-posts' post.author.username %}">Posted by {{ post.author }}</a>
                     <small class="post-meta ml-2">{{ post.date_posted|date:"F d, Y" }}</small>
                     <small class="text-muted ml-2">Likes: {{ post.likes.count }}</small>
-                    {% if post.label == 'ciencia' %}
-                        <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ post.label }}</a>
-                    {% elif post.label == 'ficción' %}
-                        <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ post.label }}</a>
-                    {% endif %}
+                    <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ post.label }}</a>
                 </p>
             </div>
         </article>

@@ -11,7 +11,7 @@
                     <a class="link-c" href="{% url 'user-posts' post.author.username %}">Posted by {{ post.author }}</a>
                     <small class="post-meta ml-2">{{ post.date_posted|date:"F d, Y" }}</small>
                     <small class="text-muted ml-2">Likes: {{ post.likes.count }}</small>
-                    <a class="ml-4 link-c" href="#">{{ post.label }}</a>
+                    <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ post.label }}</a>
                 </p>
             </div>
         </article>
