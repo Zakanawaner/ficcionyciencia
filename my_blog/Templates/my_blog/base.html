@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-{% comment %}
-{% load static %}
-{% endcomment %}
+{% load staticfiles %}
 <html lang="es">
 <head>
     <!-- Required meta tags -->
@@ -9,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Ciencia y ficción">
     <meta name="author" content="Mario Fernández">
-    {% comment %}
+
     <!-- Bootstrap core CSS -->
-    <!--<link href="{% static 'my_blog/css/bootstrap.min.css' %}" rel="stylesheet" type='text/css'>-->
+    <link href="{% staticfiles 'my_blog/css/bootstrap.min.css' %}" rel="stylesheet" type='text/css'>
 
     <!-- Custom fonts for this template -->
-    <!--<link href="{% static 'fonts/all.min.css' %}" rel="stylesheet">-->
-    <!--<link href="{% static 'fonts/lora.css' %}" rel='stylesheet'>-->
-    <!--<link href="{% static 'fonts/sans.css' %}" rel='stylesheet'>-->
+    <link href="{% staticfiles 'fonts/all.min.css' %}" rel="stylesheet">
+    <link href="{% staticfiles 'fonts/lora.css' %}" rel='stylesheet'>
+    <link href="{% staticfiles 'fonts/sans.css' %}" rel='stylesheet'>
 
     <!-- Custom styles for this template -->
-    <!--<link rel="stylesheet" href="{% static 'my_blog/css/clean-blog.min.css' %}" type='text/css'>-->
-    <!--<link rel="stylesheet" href="{% static 'my_blog/css/main.css' %}" type='text/css'>-->
-    {% endcomment %}
+    <link rel="stylesheet" href="{% staticfiles 'my_blog/css/clean-blog.min.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% staticfiles 'my_blog/css/main.css' %}" type='text/css'>
+    {% comment %}
     <link href="http://s3.amazonaws.com/ficcionyciencia-files/my_blog/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
 
     <link href="http://s3.amazonaws.com/ficcionyciencia-files/fonts/all.min.css" rel="stylesheet">
@@ -30,7 +28,7 @@
 
     <link href="http://s3.amazonaws.com/ficcionyciencia-files/my_blog/css/clean-blog.min.css" rel="stylesheet" type='text/css'>
     <link href="http://s3.amazonaws.com/ficcionyciencia-files/my_blog/css/main.css" rel="stylesheet" type='text/css'>
-
+    {% endcomment %}
     {% if title %}
         <title>Django Blog - {{ title }}</title>
     {% else %}
@@ -147,18 +145,19 @@
             </div>
         </div>
     </footer>
-    {% comment %}
+
     <!-- Optional JavaScript -->
-     <!-- Bootstrap core JavaScript -->
-    <!--<script src="{% static 'js/jquery.min.js' %}"></script>-->
-    <!--<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>-->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% staticfiles 'js/jquery.min.js' %}"></script>
+    <script src="{% staticfiles 'js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->
-    <!--<script src="{% static 'js/clean-blog.min.js' %}"></script>-->
-    {% endcomment %}
+    <script src="{% staticfiles 'js/clean-blog.min.js' %}"></script>
+    {% comment %}
     <link src="http://s3.amazonaws.com/ficcionyciencia-files/js/jquery.min.js">
     <link src="http://s3.amazonaws.com/ficcionyciencia-files/js/bootstrap.bundle.min.js">
 
     <link src="http://s3.amazonaws.com/ficcionyciencia-files/js/clean-blog.min.js">
+    {% endcomment %}
 </body>
 </html>
