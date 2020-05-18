@@ -2,14 +2,22 @@
  * Start Bootstrap - Clean Blog v5.0.8 (https://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
- */body{font-size:20px;color:#212529;font-family:Lora,'Times New Roman',serif}p{line-height:1.5;margin:30px 0}p a{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-weight:800;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}a{color:#212529;transition:all .2s}a:focus,a:hover{color:#0085a1}blockquote{font-style:italic;color:#868e96}.section-heading{font-size:36px;font-weight:700;margin-top:60px}.caption{font-size:14px;font-style:italic;display:block;margin:0;padding:10px;text-align:center;border-bottom-right-radius:5px;border-bottom-left-radius:5px}::-moz-selection{color:#fff;background:#0085a1;text-shadow:none}::selection{color:#fff;background:#0085a1;text-shadow:none}img::-moz-selection{color:#fff;background:0 0}img::selection{color:#fff;background:0 0}img::-moz-selection{color:#fff;background:0 0}#mainNav{position:absolute;border-bottom:1px solid #e9ecef;background-color:#fff;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}
- #mainNav .navbar-brand{font-weight:800;color:#343a40}#mainNav .navbar-toggler{font-size:12px;font-weight:800;padding:13px;text-transform:uppercase;color:#343a40}#mainNav .navbar-nav>li.nav-item>a{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}@media only screen and (min-width:992px){#mainNav{border-bottom:1px solid transparent;background:0 0}
+ */body{font-size:20px;color:#212529;font-family:Lora,'Times New Roman',serif}p{line-height:1.5;margin:30px 0}p a{text-decoration:underline}h1,h2,h3,h4,h5,h6{font-weight:800;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}a{color:#212529;transition:all .2s}a:focus,a:hover{color:#0085a1}blockquote{font-style:italic;color:#868e96}.section-heading{font-size:36px;font-weight:700;margin-top:60px}.caption{font-size:14px;font-style:italic;display:block;margin:0;padding:10px;text-align:center;border-bottom-right-radius:5px;border-bottom-left-radius:5px}::-moz-selection{color:#fff;background:#0085a1;text-shadow:none}::selection{color:#fff;background:#0085a1;text-shadow:none}img::-moz-selection{color:#fff;background:0 0}img::selection{color:#fff;background:0 0}img::-moz-selection{color:#fff;background:0 0}
+ #mainNav{position:absolute;border-bottom:1px solid #e9ecef;background-color:#fff;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}
+ #mainNav .navbar-brand{font-weight:800;color:#343a40}
+ #mainNav .navbar-toggler{font-size:12px;font-weight:800;padding:13px;text-transform:uppercase;color:#343a40}
+ #mainNav .navbar-nav>li.nav-item>a{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}@media only screen and (min-width:992px){#mainNav{border-bottom:1px solid transparent;background:0 0}
  #mainNav .navbar-brand{padding:10px 20px;color:#fff}
- #mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{color:rgba(255,255,255,.8)}#mainNav .navbar-nav>li.nav-item>a{padding:10px 20px;color:#fff}#mainNav .navbar-nav>li.nav-item>a:focus,#mainNav .navbar-nav>li.nav-item>a:hover{color:rgba(255,255,255,.8)}}@media only screen and (min-width:992px){#mainNav{transition:background-color .2s;transform:translate3d(0,0,0);-webkit-backface-visibility:hidden}#mainNav.is-fixed{position:fixed;top:-67px;transition:transform .2s;border-bottom:1px solid #fff;background-color:rgba(255,255,255,.9)}
+ #mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{color:rgba(255,255,255,.8)}
+ #mainNav .navbar-nav>li.nav-item>a{padding:10px 20px;color:#fff}
+ #mainNav .navbar-nav>li.nav-item>a:focus,#mainNav .navbar-nav>li.nav-item>a:hover{color:rgba(255,255,255,.8)}}@media only screen and (min-width:992px){#mainNav{transition:background-color .2s;transform:translate3d(0,0,0);-webkit-backface-visibility:hidden}#mainNav.is-fixed{position:fixed;top:-67px;transition:transform .2s;border-bottom:1px solid #fff;background-color:rgba(255,255,255,.9)}
  #mainNav.is-fixed .navbar-brand{color:#212529}
- #mainNav.is-fixed .navbar-brand:focus,#mainNav.is-fixed .navbar-brand:hover{color:#0085a1}#mainNav.is-fixed .navbar-nav>li.nav-item>a{color:#212529}#mainNav.is-fixed .navbar-nav>li.nav-item>a:focus,#mainNav.is-fixed .navbar-nav>li.nav-item>a:hover{color:#0085a1}#mainNav.is-visible{transform:translate3d(0,100%,0)}}
+ #mainNav.is-fixed .navbar-brand:focus,#mainNav.is-fixed .navbar-brand:hover{color:#0085a1}
+ #mainNav.is-fixed .navbar-nav>li.nav-item>a{color:#212529}
+ #mainNav.is-fixed .navbar-nav>li.nav-item>a:focus,#mainNav.is-fixed .navbar-nav>li.nav-item>a:hover{color:#0085a1}
+ #mainNav.is-visible{transform:translate3d(0,100%,0)}}
  header.masthead{margin-bottom:50px;background: url('../../../../../media/img/home.jpg') no-repeat center center;background-color:#eeeeee;background-attachment:scroll;position:relative;background-size:cover}
- header.masthead .overlay{position:absolute;top:0;left:0;height:100%;width:100%;background-color:#212529;opacity:.5}
+ header.masthead .overlay{position:absolute;top:0;left:0;height:100%;width:100%;background-color:#000000;opacity:.5}
  header.masthead .page-heading,header.masthead .post-heading,header.masthead .site-heading{padding:80px 0 20px;color:#fff}
  @media only screen and (min-width:768px){.page-heading .post-heading .site-heading{padding:100px 0}}
  header.masthead .page-heading,header.masthead .site-heading{text-align:center}
