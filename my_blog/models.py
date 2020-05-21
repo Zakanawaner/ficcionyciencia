@@ -26,3 +26,19 @@ class Post(models.Model):
 
     def get_like_url(self):
         return reverse('like-toggle', kwargs={'pk': self.pk})
+
+    def get_comment_url(self):
+        return reverse('comment-post', kwargs={'pk': self.pk})
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    body = models.TextField()
+    created_on = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return 'Comentado {} por {}'.format(self.body, self.name)

@@ -5,7 +5,7 @@
         <div class="media-body">
             <div class="mb-2 article-metadata">
                 <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                <small class="text-muted">{{ object.date_posted|date:"d F, Y" }}</small>
                 {% if object.label == 'ciencia' %}
                     <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ object.label }}</a>
                 {% elif object.label == 'ficción' %}
@@ -26,4 +26,17 @@
             <a class="btn-p btn-p-outline-info btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Eliminar</a>
         </div>
     {% endif %}
+    <div class="mb-2 article-metadata">
+        <small class="text-muted ml-2">Comentarios: {{ object.comments.count }}</small>
+        <a class="btn-p btn-p-outline-info" href="{% url 'comment-post' pk=post.pk %}">Comentar</a>
+    </div>
+    {% for comment in object.comments.all %}
+        <div class="comment">
+            <small class="text-muted">{{ comment.created_on|date:"d F, Y" }}</small>
+            <strong>{{ comment.name }}</strong>
+            <p>{{ comment.body|linebreaks }}</p>
+        </div>
+    {% empty %}
+        <p class="text-muted ml-2">Aún no hay comentarios</p>
+    {% endfor %}
 {% endblock content %}

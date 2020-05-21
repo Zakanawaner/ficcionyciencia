@@ -8,6 +8,10 @@
 
 .resaltar:hover{color:#909090;text-decoration:underline}
 
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
 .profile-img {
   height: 125px;
   width: 125px;

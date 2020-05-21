@@ -27,7 +27,10 @@
                 <p class="post-meta">
                     <a class="link-c" href="{% url 'user-posts' post.author.username %}">Posted by {{ post.author }}</a>
                     <small class="post-meta ml-2">{{ post.date_posted|date:"F d, Y" }}</small>
-                    <small class="text-muted ml-2">Likes: {{ post.likes.count }}</small>
+                    <small class="text-muted ml-4">Likes: {{ post.likes.count }}</small>
+                    <small class="text-muted ml-4">
+                        <a href="{% url 'post-detail' post.id %}">Comments: {{ post.comments.count }}</a>
+                    </small>
                     {% if post.label == 'ciencia' %}
                         <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ post.label }}</a>
                     {% elif post.label == 'ficción' %}
