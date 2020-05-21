@@ -1,8 +1,15 @@
 
 .article-img {
-  height: 50px;
-  width: 50px;
-  margin-right: 16px;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius:50%;
+}
+
+.comment-img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
   border-radius:50%;
 }
 
@@ -180,3 +187,54 @@ a.btn-p.disabled,fieldset:disabled a.btn-p{pointer-events:none}
 .btn-p-info.disabled,.btn-p-info:disabled{color:#202020;background-color:transparent;border-color:#202020}
 .btn-p-info:not(:disabled):not(.disabled).active,.btn-p-info:not(:disabled):not(.disabled):active,.show>.btn-p-info.dropdown-toggle{color:#202020;background-color:#202020;border-color:#202020}
 .btn-p-info:not(:disabled):not(.disabled).active:focus,.btn-p-info:not(:disabled):not(.disabled):active:focus,.show>.btn-p-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(18,18,18,.7)}
+
+
+.header{
+    background: url("http://a.top4top.net/p_397znzmu1.png") center center fixed;
+    color: #FFF;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -msn-background-size: cover;
+}
+.header .overlay{
+    background: rgba(0, 0, 0, 0.58);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.header .navbar-default {
+	background-color:transparent !important;
+	border-color:transparent;
+	background-image:none;
+	box-shadow:none;
+}
+.header .navbar-default .navbar-brand{
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.header .navbar-default .navbar-nav>li>a {
+   font-size:20px;
+   color:#fff;
+    border-bottom: 1px solid transparent
+}
+.header .navbar-default .navbar-nav>li:hover a{
+    color: #333;
+     border-bottom: 1px solid #FFF
+}
+
+
+.header .navbar-toggle {
+      margin:10px 0;
+      background:#36C;
+      color:#FFF;
+}
