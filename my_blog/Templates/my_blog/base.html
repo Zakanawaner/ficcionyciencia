@@ -4,11 +4,12 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Ciencia y ficción">
     <meta name="author" content="Mario Fernández">
 
     <!-- Bootstrap core CSS -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <link href="{% static 'my_blog/css/bootstrap.min.css' %}" rel="stylesheet" type='text/css'>
 
     <!-- Custom fonts for this template -->
@@ -36,7 +37,45 @@
     {% endif %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="mainNav">
+    <div class="navbar navbar-expand-md navbar-light fixed-top" id="mainNav">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog-home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog-about' %}">Sobre Nosotros</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-create' %}">Nueva entrada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Tu perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Desconéctate</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Accede</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Registro</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+
+{% comment %}
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" id="mainNav">
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
@@ -70,6 +109,7 @@
             </div>
         </div>
     </nav>
+{% endcomment %}
     <header class="masthead">
         <div class="overlay"></div>
         <div class="container">
@@ -154,7 +194,7 @@
 
     <!-- Optional JavaScript -->
     <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
+
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Custom scripts for this template -->

@@ -17,13 +17,15 @@
                 {% elif object.label == 'ficción' %}
                     <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ object.label }}</a>
                 {% endif %}
-                <a class="fas fa-thumbs-up ml-4" href="{{ object.get_like_url }}"></a>
-                <small class="text-muted ml-2">{{ object.likes.count }}</small>
                 {% if user.is_authenticated %}
+                    <a class="fas fa-thumbs-up ml-4" href="{{ object.get_like_url }}"></a>
+                    <small class="text-muted ml-2">{{ object.likes.count }}</small>
                     <a class="fas fa-comment ml-4" href="{% url 'post-comment' object.id %}"></a>
                     <small class="text-muted ml-2">{{ object.comments.count }}</small>
                 {% else %}
-                    <a class="fas fa-comment ml-4"></a>
+                    <a class="fas fa-thumbs-up ml-4" href="{{ object.get_like_url }}"></a>
+                    <small class="text-muted ml-2">{{ object.likes.count }}</small>
+                    <a class="fas fa-comment ml-4" href="{{ object.get_like_url }}"></a>
                     <small class="text-muted ml-2">{{ object.comments.count }}</small>
                 {% endif %}
             </div>
