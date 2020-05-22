@@ -1,23 +1,5 @@
 {% extends "my_blog/base.html" %}
 {% block content %}
-    {% comment %}
-    <div class="row portfolios-area">
-        <div class="col-lg-6 col-md-6 web">
-            <a href="#" class="portfolio-item set-bg image-lit">
-                <div class="pi-inner">
-                    <h2>Ficción</h2>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-6 digital">
-            <a href="#" class="portfolio-item set-bg image-sci">
-                <div class="pi-inner">
-                    <h2>Ciencia</h2>
-                </div>
-            </a>
-        </div>
-    </div>
-    {% endcomment %}
     {% for post in posts %}
         <article class="media content-section">
             <div class="post-preview">
