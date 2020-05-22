@@ -41,15 +41,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="collapse_target">
-                <ul class="navbar-nav mr-auto ml-4">
-                    <li class="nav-item ml-4">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog-home' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog-about' %}">Sobre Nosotros</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto mr-4">
+                <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'post-create' %}">Nueva entrada</a>
@@ -57,14 +57,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'profile' %}">Tu perfil</a>
                         </li>
-                        <li class="nav-item mr-4">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Desconéctate</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login' %}">Accede</a>
                         </li>
-                        <li class="nav-item mr-4">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'register' %}">Registro</a>
                         </li>
                     {% endif %}
