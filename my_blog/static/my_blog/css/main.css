@@ -263,8 +263,6 @@ a.btn-p.disabled,fieldset:disabled a.btn-p{pointer-events:none}
 
 .fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}
 
-.container{min-width:992px!important}
-
 .navbar-collapse{-ms-flex-preferred-size:100%;flex-basis:100%;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center}
 
 .navbar-nav{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}

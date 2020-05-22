@@ -29,17 +29,18 @@
  header.masthead{margin-bottom:50px;background: url('../../../../../media/img/home.jpg') no-repeat center center;background-color:#eeeeee;background-attachment:scroll;position:relative;background-size:cover}
  header.masthead .overlay{position:absolute;top:0;left:0;height:100%;width:100%;background-color:#000000;opacity:.5}
  header.masthead .page-heading,header.masthead .post-heading,header.masthead .site-heading{padding:80px 0 20px;color:#fff}
- @media only screen and (min-width:500px){.page-heading .post-heading .site-heading{padding:100px 0}}
+ @media only screen and (min-width:768px){.page-heading .post-heading .site-heading{padding:100px 0}}
  header.masthead .page-heading,header.masthead .site-heading{text-align:center}
  header.masthead .page-heading h1,header.masthead .site-heading h1{font-size:50px;margin-top:0}
  header.masthead .page-heading .subheading,header.masthead .site-heading .subheading{font-size:24px;font-weight:300;line-height:1.1;display:block;margin: 10px 0 0;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}
- @media only screen and (min-width:500px){header.masthead .page-heading h1,header.masthead .site-heading h1{font-size:40px}}
+ @media only screen and (min-width:768px){header.masthead .page-heading h1,header.masthead .site-heading h1{font-size:40px}}
  header.masthead .post-heading h1{font-size:35px}
  header.masthead .post-heading .meta,header.masthead .post-heading .subheading{line-height:1.1;display:block}
  header.masthead .post-heading .subheading{font-size:24px;font-weight:600;margin:10px 0 30px;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}
  header.masthead .post-heading .meta{font-size:20px;font-weight:300;font-style:italic;font-family:Lora,'Times New Roman',serif}
  header.masthead .post-heading .meta a{color:#fff}@media only screen and (min-width:768px){header.masthead .post-heading h1{font-size:55px}
  header.masthead .post-heading .subheading{font-size:30px}}
+
  .post-preview>a{color:#212529;text-align:justify}
  .post-preview>p{color:#212529;text-align:justify}
  .post-preview>a:focus,.post-preview>a:hover{text-decoration:none;color:#0085a1}
