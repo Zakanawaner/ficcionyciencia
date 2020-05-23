@@ -1,6 +1,26 @@
 {% extends "my_blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <h2 class="border-bottom article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content }}</p>
+            <div class="mb-2 article-metadata">
+                <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted|date:"d F, Y" }}</small>
+                {% if object.label == 'ciencia' %}
+                    <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ object.label }}</a>
+                {% elif object.label == 'ficción' %}
+                    <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ object.label }}</a>
+                {% endif %}
+                <a class="fas fa-thumbs-up ml-4" href="{{ object.get_like_url }}"></a>
+                <small class="text-muted ml-2">{{ object.likes.count }}</small>
+                <a class="fas fa-comment ml-4" href="{% url 'post-comment' object.id %}"></a>
+                <small class="text-muted ml-2">{{ object.comments.count }}</small>
+            </div>
+        </div>
+    </article>
     <div class="container" style="width:100vw">
         <form method="POST" class="post-form">
             {% csrf_token %}
@@ -11,4 +31,25 @@
             <button type="submit" class="btn-p btn-p-outline-info">Comentar</button>
         </form>
     </div>
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="mb-2 article-metadata">
+                <strong><legend class="border-bottom mb-4">Comentarios: {{ object.comments.count }}</legend></strong>
+            </div>
+            {% for comment in object.comments.all %}
+                <div class="comment border-bottom border-top mb-2">
+                    <div class="mb-2 article-metadata">
+                        <img class="rounded-circle article-img" src="{{ comment.name.profile.image.url }}">
+                        <small><a class="mr-2" href="{% url 'user-posts' comment.name %}">{{ comment.name }}</a></small>
+                        <small class="text-muted">{{ comment.created_on|date:"d F, Y" }} :</small>
+                    </div>
+                    <div class="ml-4">
+                        <small><p class="text-muted ml-2">{{ comment.body }}</p></small>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-muted ml-2">Aún no hay comentarios</p>
+            {% endfor %}
+        </div>
+    </article>
 {% endblock content %}

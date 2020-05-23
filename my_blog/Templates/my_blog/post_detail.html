@@ -1,20 +1,20 @@
 {% extends "my_blog/base.html" %}
 {% block content %}
     <article class="media content-section">
-        <div class="media-body">
+        <div class="post-preview">
             <h2 class="border-bottom article-title">{{ object.title }}</h2>
             {% if object.author == user %}
                 <a class="btn-p btn-p-outline-info btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Editar</a>
                 <a class="btn-p btn-p-outline-info btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Eliminar</a>
             {% endif %}
             <p class="article-content">{{ object.content }}</p>
-            <div class="mb-2 article-metadata">
-                <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
-                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted|date:"d F, Y" }}</small>
-                {% if object.label == 'ciencia' %}
+            <p class="post-meta">
+                <img class="article-img" src="{{ object.author.profile.image.url }}">
+                <a class="link-c" href="{% url 'user-posts' object.author.username %}">Publicado por {{ object.author }}</a>
+                <small class="post-meta ml-2">{{ object.date_posted|date:"d F, Y" }}</small>
+                {% if post.label == 'Ciencia' %}
                     <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ object.label }}</a>
-                {% elif object.label == 'ficción' %}
+                {% elif post.label == 'Ficción' %}
                     <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ object.label }}</a>
                 {% endif %}
                 {% if user.is_authenticated %}
@@ -28,16 +28,16 @@
                     <a class="fas fa-comment ml-4" href="{{ object.get_like_url }}"></a>
                     <small class="text-muted ml-2">{{ object.comments.count }}</small>
                 {% endif %}
-            </div>
+            </p>
         </div>
     </article>
     <article class="media content-section">
-        <div class="media-body">
+        <div class="post-preview">
             <div class="mb-2 article-metadata">
                 <strong><legend class="border-bottom mb-4">Comentarios: {{ object.comments.count }}</legend></strong>
             </div>
             {% for comment in object.comments.all %}
-                <div class="comment border-bottom mb-2">
+                <div class="comment border-bottom border-top mb-2">
                     <div class="mb-2 article-metadata">
                         <img class="rounded-circle article-img" src="{{ comment.name.profile.image.url }}">
                         <small><a class="mr-2" href="{% url 'user-posts' comment.name %}">{{ comment.name }}</a></small>

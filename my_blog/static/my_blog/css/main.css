@@ -16,6 +16,7 @@
 
 .comment {
     margin: 20px 0px 20px 20px;
+    background-color: #fdfdfd;
 }
 
 .profile-img {
@@ -58,7 +59,7 @@
 /*De Clean Blog*/
 .title-c{padding:0 0 0;color:#fff}
 
-.link-c:hover{color:#909090;}
+.link-c:hover{color:#909090!important; decoration:none!important;}
 
 /*De Riddle*/
 .portfolios-area .gallery-block {

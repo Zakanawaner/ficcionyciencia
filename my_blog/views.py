@@ -40,7 +40,7 @@ class SciencePostListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        return Post.objects.filter(label='ciencia').order_by('-date_posted')
+        return Post.objects.filter(label='Ciencia').order_by('-date_posted')
 
 
 class FictionPostListView(ListView):
@@ -50,7 +50,7 @@ class FictionPostListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        return Post.objects.filter(label='ficción').order_by('-date_posted')
+        return Post.objects.filter(label='Ficción').order_by('-date_posted')
 
 
 class PostDetailView(DetailView):
@@ -123,4 +123,4 @@ def PostCommentView(request, pk):
             return redirect('post-detail', pk=post.pk)
     else:
         form = CommentForm()
-    return render(request, 'my_blog/post_comment.html', {'form': form})
+    return render(request, 'my_blog/post_comment.html', {'form': form, 'object': post})

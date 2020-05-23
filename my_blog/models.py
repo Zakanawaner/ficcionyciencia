@@ -5,14 +5,14 @@ from django.urls import reverse
 
 
 LABEL_CHOICES = (
-       ('ficción','ficción'),
-       ('ciencia','ciencia'),
+       ('Ficción','Ficción'),
+       ('Ciencia','Ciencia'),
 )
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    label = models.CharField(max_length=7, choices=LABEL_CHOICES, default='ficción')
+    label = models.CharField(max_length=7, choices=LABEL_CHOICES, default='Ficción')
     content = models.TextField()
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
     date_posted = models.DateTimeField(default=timezone.now)

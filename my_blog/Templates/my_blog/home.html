@@ -3,7 +3,7 @@
     {% for post in posts %}
         <article class="media content-section">
             <div class="post-preview">
-                <h2><a class="border-bottom post-title link-c" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <h2><a class="border-bottom link-c" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                 <p class="post-preview">{{ post.content|truncatechars:200 }}</p>
                 <p class="post-meta">
                     <img class="article-img" src="{{ post.author.profile.image.url }}">
@@ -13,9 +13,9 @@
                     <small class="text-muted ml-2">{{ post.likes.count }}</small>
                     <a class="fas fa-comment ml-4"></a>
                     <small class="text-muted ml-2">{{ post.comments.count }}</small>
-                    {% if post.label == 'ciencia' %}
+                    {% if post.label == 'Ciencia' %}
                         <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ post.label }}</a>
-                    {% elif post.label == 'ficción' %}
+                    {% elif post.label == 'Ficción' %}
                         <a class="ml-4 link-c" href="{% url 'fiction-posts' %}">{{ post.label }}</a>
                     {% endif %}
                 </p>
