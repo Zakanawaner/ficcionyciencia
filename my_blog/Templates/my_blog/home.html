@@ -9,9 +9,9 @@
                     <img class="article-img" src="{{ post.author.profile.image.url }}">
                     <a class="link-c" href="{% url 'user-posts' post.author.username %}">Publicado por {{ post.author }}</a>
                     <small class="post-meta ml-2">{{ post.date_posted|date:"d F, Y" }}</small>
-                    <a class="fas fa-thumbs-up ml-4"></a>
+                    <a class="fas fa-thumbs-up ml-4 fa-lg"></a>
                     <small class="text-muted ml-2">{{ post.likes.count }}</small>
-                    <a class="fas fa-comment ml-4"></a>
+                    <a class="fas fa-comment ml-4 fa-lg"></a>
                     <small class="text-muted ml-2">{{ post.comments.count }}</small>
                     {% if post.label == 'Ciencia' %}
                         <a class="ml-4 link-c" href="{% url 'science-posts' %}">{{ post.label }}</a>
