@@ -23,7 +23,7 @@
   height: 125px;
   width: 125px;
   margin-right: 20px;
-  margin-bottom: 16px;
+  margin-botton: 16px;
   border-radius:50%;
 }
 
@@ -59,7 +59,7 @@
 /*De Clean Blog*/
 .title-c{padding:0 0 0;color:#fff}
 
-.link-c:hover{color:#909090!important; text-decoration:none!important;}
+.link-c:hover{color:#909090!important; decoration:none!important;}
 
 /*De Riddle*/
 .portfolios-area .gallery-block {
@@ -243,8 +243,7 @@ a.btn-p.disabled,fieldset:disabled a.btn-p{pointer-events:none}
         display:-ms-flexbox!important;
         display:flex!important;
         -ms-flex-preferred-size:auto;
-        flex-basis:auto;
-        background-color:#fff;
+        flex-basis:auto
         }
     .navbar-expand-sm .navbar-toggler{
         display:none

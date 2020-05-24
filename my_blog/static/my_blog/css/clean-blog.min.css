@@ -42,7 +42,7 @@
  @media only screen and (min-width:768px){header.masthead .page-heading h1,header.masthead .site-heading h1{font-size:40px}}
  header.masthead .post-heading h1{font-size:35px}
  header.masthead .post-heading .meta,header.masthead .post-heading .subheading{line-height:1.1;display:block}
- header.masthead .post-heading .subheading{font-size:24px;font-weight:600;margin:10px 0 30px;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;}
+ header.masthead .post-heading .subheading{font-size:24px;font-weight:600;margin:10px 0 30px;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}
  header.masthead .post-heading .meta{font-size:20px;font-weight:300;font-style:italic;font-family:Lora,'Times New Roman',serif}
  header.masthead .post-heading .meta a{color:#fff}@media only screen and (min-width:768px){header.masthead .post-heading h1{font-size:55px}
  header.masthead .post-heading .subheading{font-size:30px}}
@@ -65,6 +65,7 @@
 }
 .article-content {
   white-space: pre-line;
+  text-align:justify
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
