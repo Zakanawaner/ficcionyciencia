@@ -147,22 +147,22 @@ LOGIN_URL = 'login'
 
 # Send Mail with Google
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 # Send Mail with Sendgrid
 # Twilio SendGrid     SENDGRID_SANDBOX_MODE_IN_DEBUG = True/False  for debug mode on/off
 # EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
-SENDGRID_SANDBOX_MODE_IN_DEBUG = False
-EMAIL_HOST = 'smtp.sendgrid.net'
-SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
