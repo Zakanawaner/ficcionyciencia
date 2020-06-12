@@ -4,7 +4,8 @@ from django.contrib.auth.models import User, AnonymousUser
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, RedirectView
 from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -109,6 +110,27 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'my_blog/about.html', {'title': 'About'})
+
+
+def ContactView(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contacto = form.save(commit=False)
+            contacto.save()
+            send_mail('Contacto',
+                      'Mensaje de: {}'
+                      '\n'
+                      'Email: {}'
+                      '\n'
+                      'Contenido:\n{}'.format(contacto.name, contacto.email, contacto.body),
+                      'ficcionyciencia.contact@gmail.com',
+                      ['ficcionyciencia.contact@gmail.com'])
+            messages.success(request, 'Tu mensaje ha sido enviado. Te contestaremos lo más pronto posible.')
+            return redirect('blog-contact')
+    else:
+        form = ContactForm()
+    return render(request, 'my_blog/contact.html', {'form': form})
 
 
 def PostCommentView(request, pk):

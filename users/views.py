@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.core.mail import send_mail
 
 
 def register(request):
@@ -10,6 +11,13 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            send_mail('Cuenta creada!',
+                      'Hola, {}! \n\n'
+                      'Hemos creado tu cuenta satisfactoriamente. '
+                      'Esperamos que tu experiencia con nosotros sea satisfactoria'.format(username),
+                      'ficcionyciencia.contact@gmail.com',
+                      [form.cleaned_data.get('email')],
+                      fail_silently=False,)
             messages.success(request, f'{username}, has creado tu cuenta! Ahora te redirigiremos a la página de acceso')
             return redirect('login')
     else:

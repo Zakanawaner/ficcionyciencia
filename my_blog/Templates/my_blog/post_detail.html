@@ -35,6 +35,9 @@
         <div class="post-preview">
             <div class="mb-2 article-metadata">
                 <strong><legend class="border-bottom mb-4">Comentarios: {{ object.comments.count }}</legend></strong>
+                {% if user.is_authenticated %}
+                    <a class="btn-p btn-p-outline-info btn-sm mt-1 mb-2" href="{% url 'post-comment' object.id %}">Escribir comentario</a>
+                {% endif %}
             </div>
             {% for comment in object.comments.all %}
                 <div class="comment border-bottom border-top mb-2">

@@ -42,3 +42,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comentado {} por {}'.format(self.body, self.name)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    body = models.TextField()
+
+    def __str__(self):
+        return 'Mensaje enviado'

@@ -48,6 +48,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog-about' %}">Sobre Nosotros</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog-contact' %}">Contacto</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}

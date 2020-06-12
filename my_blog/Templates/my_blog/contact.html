@@ -1,15 +1,15 @@
 {% extends "my_blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div class="container" style="width:100vw">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Modifica tu contraseña</legend>
+                <legend class="border-bottom mb-4">Escríbenos un mensaje</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn-p btn-p-outline-info btn-sm mt-1 mb-2" type="submit">Cambiar contraseña</button>
+                <button class="btn-p btn-p-outline-info" type="submit">Enviar</button>
             </div>
         </form>
     </div>

@@ -8,6 +8,9 @@
                 <p class="post-meta">
                     <img class="article-img" src="{{ post.author.profile.image.url }}">
                     <a class="link-c" href="{% url 'user-posts' post.author.username %}">Publicado por {{ post.author }}</a>
+                    {% if post.author.is_staff %}
+                        <small class="post-meta">(Colaborador)</small>
+                    {% endif %}
                     <small class="post-meta ml-2">{{ post.date_posted|date:"d F, Y" }}</small>
                     <a class="fas fa-thumbs-up ml-4 fa-lg"></a>
                     <small class="text-muted ml-2">{{ post.likes.count }}</small>
